@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Workshoply — Full-Stack Workshop Discovery & Booking Platform
 
 [![Node.js](https://img.shields.io/badge/Node.js-v20%2B-green.svg)](https://nodejs.org/)
@@ -419,3 +420,7 @@ Base URL: `http://localhost:5000/api/v1`
 - **GitHub Profile:** [@sneh8989](https://github.com/sneh8989)
 - **Repository:** [Workshoply](https://github.com/sneh8989/Workshoply)
 - **License:** [MIT License](LICENSE)
+=======
+# workshoply
+A full-stack workshop discovery and booking platform built with React, Node.js, Express, and MongoDB, featuring workshop search, seat reservations, Razorpay payments, digital tickets with QR codes, and an admin dashboard.
+>>>>>>> c7a3e7325d69c7fbf8910d23d746bd6df15f0e04
