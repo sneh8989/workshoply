@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #14213D;
+  --color-secondary: #F97316;
+  --color-background: #FAF7F2;
+  --color-surface: #FFFFFF;
+  --color-accent: #14B8A6;
+  --color-main: #202124;
+  --color-muted: #64748B;
+  --color-success: #16A34A;
+  --color-warning: #F59E0B;
+  --color-danger: #DC2626;
+  --color-border: #E7E5E4;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-main);
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Custom utility classes */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-semibold px-5 py-2.5 rounded-lg bg-primary text-white hover:bg-primary-hover transition-all duration-200 shadow-sm active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-semibold px-5 py-2.5 rounded-lg bg-secondary text-white hover:bg-secondary-hover transition-all duration-200 shadow-sm active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center font-semibold px-5 py-2.5 rounded-lg border border-border bg-surface text-main hover:bg-background transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .card-surface {
+    @apply bg-surface border border-border rounded-xl shadow-card transition-all duration-300;
+  }
+}
+
+/* Print styles for modal ticket printing */
+@media print {
+  body.ticket-modal-open {
+    background-color: #ffffff !important;
+    overflow: visible !important;
+  }
+
+  body.ticket-modal-open > #root {
+    display: none !important;
+  }
+
+  #ticket-modal-portal {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  #ticket-modal-portal .ticket-modal-card {
+    box-shadow: none !important;
+    border: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

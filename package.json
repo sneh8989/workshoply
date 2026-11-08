@@ -1,0 +1,26 @@
+{
+  "name": "workshoply-monorepo",
+  "version": "1.0.0",
+  "description": "Workshoply - Full-Stack Workshop Booking Platform",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"server,client\" -c \"blue,green\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "test": "npm --prefix server test && npm --prefix client test",
+    "test:server": "npm --prefix server test",
+    "test:client": "npm --prefix client test",
+    "build": "npm --prefix client run build",
+    "seed": "npm --prefix server run seed",
+    "bootstrap:admin": "npm --prefix server run bootstrap:admin",
+    "lint": "npm --prefix server run lint && npm --prefix client run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
